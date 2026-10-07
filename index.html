@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <!-- Search bar -->
+    <form id="search-form" class="search" autocomplete="off">
+      <label for="city-input" class="visually-hidden">City name</label>
+      <input
+        type="text"
+        id="city-input"
+        class="search__input"
+        placeholder="Search city…"
+        required
+      />
+      <button type="submit" id="search-btn" class="search__button">Search</button>
+    </form>
+
+    <!-- Welcome message (shown before the first search) -->
+    <section id="welcome" class="welcome">
+      <div class="welcome__emoji">⛅</div>
+      <h1 class="welcome__title">Weather Portal</h1>
+      <p class="welcome__text">Search for a city to see the current weather.</p>
+    </section>
+
+    <!-- Loading indicator -->
+    <div id="loading" class="loading" hidden role="status" aria-live="polite">
+      <div class="loading__spinner"></div>
+      <span>Loading weather…</span>
+    </div>
+
+    <!-- Error message -->
+    <div id="error" class="error" hidden role="alert"></div>
+
+    <!-- Weather result -->
+    <section id="weather" class="weather" hidden aria-live="polite">
+      <p id="weather-date" class="weather__date"></p>
+      <h2 id="weather-city" class="weather__city"></h2>
+
+      <img id="weather-icon" class="weather__icon" alt="" width="160" height="160" />
+      <p id="weather-temp" class="weather__temp"></p>
+      <p id="weather-desc" class="weather__desc"></p>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat__icon">🌡️</span>
+          <span class="stat__label">Feels like</span>
+          <span id="weather-feels" class="stat__value"></span>
+        </div>
+        <div class="stat">
+          <span class="stat__icon">💧</span>
+          <span class="stat__label">Humidity</span>
+          <span id="weather-humidity" class="stat__value"></span>
+        </div>
+        <div class="stat">
+          <span class="stat__icon">💨</span>
+          <span class="stat__label">Wind</span>
+          <span id="weather-wind" class="stat__value"></span>
+        </div>
+        <div class="stat">
+          <span class="stat__icon">🧭</span>
+          <span class="stat__label">Pressure</span>
+          <span id="weather-pressure" class="stat__value"></span>
+        </div>
+        <div class="stat">
+          <span class="stat__icon">🌅</span>
+          <span class="stat__label">Sunrise</span>
+          <span id="weather-sunrise" class="stat__value"></span>
+        </div>
+        <div class="stat">
+          <span class="stat__icon">🌇</span>
+          <span class="stat__label">Sunset</span>
+          <span id="weather-sunset" class="stat__value"></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
